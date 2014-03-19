@@ -11,20 +11,32 @@
 #import "AssetsLibrary/AssetsLibrary.h"
 #import <ImageIO/ImageIO.h>
 #import <CoreLocation/CoreLocation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *takeShotButton;
 @property (strong, nonatomic) UIImage *pictureTaken;
+@property (strong, nonatomic) IBOutlet UIImageView *gpsCheck;
+@property (strong, nonatomic) IBOutlet UIImageView *wifiCheck;
+@property (strong, nonatomic) IBOutlet UIImageView *geofenceCheck;
 @end
 
 @implementation ViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
+    }
+    return self;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
+    [self checkRequisites];
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,4 +190,50 @@
     return dest_data;
 }
 
+- (void) checkRequisites {
+    
+    // GPS CHECK
+    if([CLLocationManager locationServicesEnabled] &&
+       [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
+        // show the map
+        self.gpsCheck.image = [UIImage imageNamed:@"ServiceON"];
+    } else {
+        // show error
+        UIAlertView *noGPSAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please turn on the GPS" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        self.gpsCheck.image = [UIImage imageNamed:@"ServiceOFF"];
+        [noGPSAlertView show];
+    }
+
+    
+    // WIFI CHECK
+    Reachability *wifiReach = [Reachability reachabilityForLocalWiFi];
+    [wifiReach startNotifier];
+    
+    NetworkStatus netStatus2 = [wifiReach currentReachabilityStatus];
+    if(netStatus2 == NotReachable) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"This feature requires an Wifi Enabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        self.wifiCheck.image = [UIImage imageNamed:@"ServiceOFF"];
+    } else {
+        //wifi connection available;
+        self.wifiCheck.image = [UIImage imageNamed:@"ServiceON"];
+    }
+    
+    // Geofence TODO::
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self checkRequisites];
+}
+
+- (void)reachabilityDidChange:(NSNotification *)notification {
+    Reachability *reachability = (Reachability *)[notification object];
+    
+    if ([reachability currentReachabilityStatus]) {
+        NSLog(@"Reachable");
+    } else {
+        NSLog(@"Unreachable");
+    }
+}
 @end

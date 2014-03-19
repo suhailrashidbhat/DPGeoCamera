@@ -25,6 +25,13 @@
 		1A135BE818D96C0400127FB5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135BE718D96C0400127FB5 /* Default.png */; };
 		1A135BF218D9710B00127FB5 /* Dubai_Police-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135BF118D9710B00127FB5 /* Dubai_Police-2.png */; };
 		1A135BF418D9713600127FB5 /* Dubai_Police-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135BF318D9713600127FB5 /* Dubai_Police-3.png */; };
+		1A135C0618D97A0100127FB5 /* TakeShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135C0518D97A0100127FB5 /* TakeShot.png */; };
+		1A135C0918D97A9600127FB5 /* ServiceOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135C0718D97A9600127FB5 /* ServiceOFF.png */; };
+		1A135C0A18D97A9600127FB5 /* ServiceON.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135C0818D97A9600127FB5 /* ServiceON.png */; };
+		1A135C0C18D97D3200127FB5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A135C0B18D97D3200127FB5 /* bg.png */; };
+		1A135C0E18D998CC00127FB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A135C0D18D998CC00127FB5 /* SystemConfiguration.framework */; };
+		1A135C1018D99AD500127FB5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A135C0F18D99AD500127FB5 /* CFNetwork.framework */; };
+		1A135C1318D99D0800127FB5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A135C1218D99D0800127FB5 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,14 @@
 		1A135BEE18D96F0D00127FB5 /* Dubai_Police.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dubai_Police.png; path = ../Dubai_Police.png; sourceTree = "<group>"; };
 		1A135BF118D9710B00127FB5 /* Dubai_Police-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dubai_Police-2.png"; sourceTree = "<group>"; };
 		1A135BF318D9713600127FB5 /* Dubai_Police-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dubai_Police-3.png"; sourceTree = "<group>"; };
+		1A135C0518D97A0100127FB5 /* TakeShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TakeShot.png; sourceTree = "<group>"; };
+		1A135C0718D97A9600127FB5 /* ServiceOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ServiceOFF.png; sourceTree = "<group>"; };
+		1A135C0818D97A9600127FB5 /* ServiceON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ServiceON.png; sourceTree = "<group>"; };
+		1A135C0B18D97D3200127FB5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		1A135C0D18D998CC00127FB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1A135C0F18D99AD500127FB5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1A135C1118D99D0800127FB5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1A135C1218D99D0800127FB5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A135C1018D99AD500127FB5 /* CFNetwork.framework in Frameworks */,
+				1A135C0E18D998CC00127FB5 /* SystemConfiguration.framework in Frameworks */,
 				1A135BDC18D953FC00127FB5 /* CoreLocation.framework in Frameworks */,
 				1A135BDA18D8B31900127FB5 /* MobileCoreServices.framework in Frameworks */,
 				1A135BA718D8A77F00127FB5 /* CoreGraphics.framework in Frameworks */,
@@ -113,6 +130,8 @@
 		1A135BA318D8A77F00127FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A135C0F18D99AD500127FB5 /* CFNetwork.framework */,
+				1A135C0D18D998CC00127FB5 /* SystemConfiguration.framework */,
 				1A135BDB18D953FC00127FB5 /* CoreLocation.framework */,
 				1A135BD918D8B31900127FB5 /* MobileCoreServices.framework */,
 				1A135BA418D8A77F00127FB5 /* Foundation.framework */,
@@ -126,6 +145,8 @@
 		1A135BAA18D8A77F00127FB5 /* DPGeoCamera */ = {
 			isa = PBXGroup;
 			children = (
+				1A135C1118D99D0800127FB5 /* Reachability.h */,
+				1A135C1218D99D0800127FB5 /* Reachability.m */,
 				1A135BB318D8A77F00127FB5 /* AppDelegate.h */,
 				1A135BB418D8A77F00127FB5 /* AppDelegate.m */,
 				1A135BB618D8A77F00127FB5 /* Main.storyboard */,
@@ -169,6 +190,10 @@
 		1A135BE618D96BEF00127FB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1A135C0B18D97D3200127FB5 /* bg.png */,
+				1A135C0718D97A9600127FB5 /* ServiceOFF.png */,
+				1A135C0818D97A9600127FB5 /* ServiceON.png */,
+				1A135C0518D97A0100127FB5 /* TakeShot.png */,
 				1A135BF318D9713600127FB5 /* Dubai_Police-3.png */,
 				1A135BF118D9710B00127FB5 /* Dubai_Police-2.png */,
 				1A135BEE18D96F0D00127FB5 /* Dubai_Police.png */,
@@ -255,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A135BF418D9713600127FB5 /* Dubai_Police-3.png in Resources */,
+				1A135C0918D97A9600127FB5 /* ServiceOFF.png in Resources */,
 				1A135BF218D9710B00127FB5 /* Dubai_Police-2.png in Resources */,
 				1A135BE818D96C0400127FB5 /* Default.png in Resources */,
+				1A135C0A18D97A9600127FB5 /* ServiceON.png in Resources */,
+				1A135C0618D97A0100127FB5 /* TakeShot.png in Resources */,
+				1A135C0C18D97D3200127FB5 /* bg.png in Resources */,
 				1A135BAF18D8A77F00127FB5 /* InfoPlist.strings in Resources */,
 				1A135BB818D8A77F00127FB5 /* Main.storyboard in Resources */,
 			);
@@ -279,6 +308,7 @@
 			files = (
 				1A135BBB18D8A77F00127FB5 /* ViewController.m in Sources */,
 				1A135BB518D8A77F00127FB5 /* AppDelegate.m in Sources */,
+				1A135C1318D99D0800127FB5 /* Reachability.m in Sources */,
 				1A135BB118D8A77F00127FB5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

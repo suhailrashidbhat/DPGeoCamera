@@ -7,12 +7,24 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    Reachability *wifiReachability = [Reachability reachabilityForLocalWiFi];
+    // Start Monitoring
+    [wifiReachability startNotifier];
+    NetworkStatus wifiStatus = [wifiReachability currentReachabilityStatus];
+    if (wifiStatus == NotReachable) {
+        NSLog(@"Not Reachable!!");
+    } else {
+        NSLog(@"Reachable!!");
+    }
+    
+    
     return YES;
 }
 							
